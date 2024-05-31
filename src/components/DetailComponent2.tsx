@@ -4,7 +4,7 @@ interface DetailComponentProps {
   onClose: () => void;
 }
 
-const DetailComponent: React.FC<DetailComponentProps> = ({ onClose }) => {
+const DetailComponent2: React.FC<DetailComponentProps> = ({ onClose }) => {
   const [title, setTitle] = useState("");
   const [date, setDate] = useState("");
   const [address, setAddress] = useState("");
@@ -178,4 +178,4 @@ const styles = {
   },
 };
 
-export default DetailComponent;
+export default DetailComponent2;

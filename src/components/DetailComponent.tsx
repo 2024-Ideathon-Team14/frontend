@@ -20,7 +20,7 @@ const styles = {
     position: "fixed",
     height: "100%",
     width: "25%",
-    backgroundColor: "yellow",
+    backgroundColor: "white",
     left: "25%",
     top: 0,
     zIndex: 20,

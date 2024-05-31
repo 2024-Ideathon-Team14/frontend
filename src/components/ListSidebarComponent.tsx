@@ -24,7 +24,7 @@ const styles = {
     position: "fixed",
     height: "100%",
     width: "25%",
-    backgroundColor: "pink",
+    backgroundColor: "white",
     left: 0,
     top: 0,
     zIndex: 20,

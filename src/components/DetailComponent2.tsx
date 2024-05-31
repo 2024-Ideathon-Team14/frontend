@@ -5,108 +5,7 @@ interface DetailComponentProps {
 }
 
 const DetailComponent2: React.FC<DetailComponentProps> = ({ onClose }) => {
-  const [title, setTitle] = useState("");
-  const [date, setDate] = useState("");
-  const [address, setAddress] = useState("");
-  const [category, setCategory] = useState("");
-  const [petName, setPetName] = useState("");
-  const [petAge, setPetAge] = useState("");
-  const [petBreed, setPetBreed] = useState("");
-  const [details, setDetails] = useState("");
-
-  return (
-    <div style={styles.detail}>
-      <button style={styles.closeButton} onClick={onClose}>
-        x
-      </button>
-      <h2 style={styles.title}>
-        돌봄 요청 작성하기{" "}
-        <span role="img" aria-label="paw">
-          🐾
-        </span>
-      </h2>
-      <form style={styles.form}>
-        <label style={styles.label}>
-          제목
-          <input
-            type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            style={styles.input}
-          />
-        </label>
-        <label style={styles.label}>
-          날짜 선택
-          <input
-            type="date"
-            value={date}
-            onChange={(e) => setDate(e.target.value)}
-            style={styles.input}
-          />
-        </label>
-        <label style={styles.label}>
-          주소 입력
-          <input
-            type="text"
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            style={styles.input}
-          />
-        </label>
-        <label style={styles.label}>
-          카테고리
-          <select
-            value={category}
-            onChange={(e) => setCategory(e.target.value)}
-            style={styles.input}
-          >
-            <option value="" disabled>
-              필수 선택입니다.
-            </option>
-            <option value="산책">산책</option>
-            <option value="돌봄">돌봄</option>
-            <option value="기타">기타</option>
-          </select>
-        </label>
-        <h3 style={styles.subTitle}>반려견 정보</h3>
-        <label style={styles.label}>
-          이름
-          <input
-            type="text"
-            value={petName}
-            onChange={(e) => setPetName(e.target.value)}
-            style={styles.input}
-          />
-        </label>
-        <label style={styles.label}>
-          나이
-          <input
-            type="text"
-            value={petAge}
-            onChange={(e) => setPetAge(e.target.value)}
-            style={styles.input}
-          />
-        </label>
-        <label style={styles.label}>
-          견종
-          <input
-            type="text"
-            value={petBreed}
-            onChange={(e) => setPetBreed(e.target.value)}
-            style={styles.input}
-          />
-        </label>
-        <label style={styles.label}>
-          상세 정보 입력
-          <textarea
-            value={details}
-            onChange={(e) => setDetails(e.target.value)}
-            style={styles.textarea}
-          />
-        </label>
-      </form>
-    </div>
-  );
+  return <div style={styles.detail}>ㅇㄹㅎ</div>;
 };
 
 const styles = {
@@ -114,7 +13,7 @@ const styles = {
     position: "fixed",
     height: "100%",
     width: "25%",
-    backgroundColor: "#333333", // 어두운 배경색
+    backgroundColor: "white", // 어두운 배경색
     color: "white", // 흰색 텍스트
     left: "25%",
     top: 0,

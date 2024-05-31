@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../assets/Logo.svg"; // 올바른 경로로 수정
 import Icon from "../assets/Icon.svg"; // 올바른 경로로 수정
+import DetailComponent from "./DetailComponent"; // DetailComponent 컴포넌트를 올바른 경로로 수정하여 임포트
 import DetailComponent2 from "./DetailComponent2"; // DetailComponent2 컴포넌트를 올바른 경로로 수정하여 임포트
 
 interface ListSidebarComponentProps {
@@ -11,6 +12,7 @@ const ListSidebarComponent: React.FC<ListSidebarComponentProps> = ({
   onCompose,
 }) => {
   const [selectedItem, setSelectedItem] = useState(null);
+  const [isDetailComponentVisible, setDetailComponentVisible] = useState(false);
 
   const items = [
     {
@@ -44,12 +46,18 @@ const ListSidebarComponent: React.FC<ListSidebarComponentProps> = ({
 
   const handleDetailClick = (item) => {
     setSelectedItem(item);
+    setDetailComponentVisible(false); // DetailComponent2를 열기 위해 DetailComponent는 닫음
+  };
+
+  const handleComposeClick = () => {
+    setDetailComponentVisible(true); // DetailComponent를 열기
+    setSelectedItem(null); // DetailComponent2를 닫기 위해 selectedItem 초기화
   };
 
   return (
     <div style={styles.sidebar}>
       <img src={Logo} alt="Logo" style={styles.logo} />
-      <button style={styles.composeButton} onClick={onCompose}>
+      <button style={styles.composeButton} onClick={handleComposeClick}>
         돌봄 요청 작성하기 <span style={styles.arrow}>&gt;</span>
       </button>
       <div style={styles.listContainer}>
@@ -76,7 +84,10 @@ const ListSidebarComponent: React.FC<ListSidebarComponentProps> = ({
           </div>
         ))}
       </div>
-      {selectedItem && (
+      {isDetailComponentVisible && (
+        <DetailComponent onClose={() => setDetailComponentVisible(false)} />
+      )}
+      {selectedItem && !isDetailComponentVisible && (
         <DetailComponent2
           item={selectedItem}
           onClose={() => setSelectedItem(null)}
